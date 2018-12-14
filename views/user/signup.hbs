@@ -1,0 +1,51 @@
+
+<br>
+<br>
+<br>    <!--header area end-->
+
+    <!--welcome area start-->
+<div class="welcome-area" id="home">
+      <div id="particles-js"></div>
+        <div class="container">
+            <div class="row">
+
+            <div class="col-12 col-md-6 align-self-center">
+                <h1>Sign Up</h1>
+               {{#if hasErrors}}
+                <div class="alert alert-danger">
+                  {{#each messages }}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+                {{/if}}
+                <form action="/user/signup" method="post">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control">
+                  </div>
+                  <!----<div class="form-group">
+                    <label for="imagepath">Image Path</label>
+                    <input type="text" id="imagepath" name="txtimagepath" class="form-control">
+                  </div>---->
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="email"  name="email" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Password</label>
+                    <input type="password" id="password" placeholder="password" name="password"  class="form-control">
+                  </div>
+                  <input type="hidden" name="_csrf" value= "{{ csrfToken }}">
+                  <button type="submit" class="btn btn-primary">Signup</button>
+
+                </form>
+              </div>
+
+              <div class="col-12 col-md-6 align-self-center">
+                    <div class="welcome-img">
+                        <img src="../images/globe.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

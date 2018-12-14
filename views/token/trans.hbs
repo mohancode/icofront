@@ -1,0 +1,58 @@
+<div class="maincontent container">
+  <br>
+
+  <hr>
+  <br>
+  <div id="loader">
+    <p class="text-center">Loading...</p>
+  </div>
+    <h3>Introducing Dapp Token</h3>
+    <br>
+    <div class="row">
+      <div class="col-lg-6 col-md-4">
+        <p> <b>Your Address : </b> <span class="useraddress">{{useraddress}}</span></p>
+      </div>
+      <div class="col-lg-6 col-md-4">
+          <p> <b>ETH balance is : </b><span class="userbalance">{{userBalance}}</span</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-4">
+        <p><b>Token Price : </b><span class="token-price">{{price}}</span></p>
+      </div>
+      <div class="col-lg-6 col-md-4">
+        <b>ATT TOKEN : </b><span class="token-balance">{{ balance }}</span></p>
+      </div>
+    </div>
+    <br>
+    <form role="form" action="/token/fundit" method="post">
+      <div class="form-group">
+          <div class="input-group">
+            <input id="numberOfToken" placeholder="Enter the token to send" class="form-control" type="number" name="tonumber"  min="1" pattern="[0-9]">
+            </span>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="input-group">
+            <input id="numberOfToken" placeholder="to address" class="form-control" type="text" name="toaddress">
+            </span>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-btn"><button type="submit" class="btn btn-primary">Transfer</button>
+            </span>
+          </div>
+      </div>
+    </form>
+    <br>
+    <div class="progress">
+    <div id="progress" class="progress-bar progress-bar-striped active" aria-voluemin="0" aria-volumemax="100">
+    </div></div>
+    <br>
+    <div>
+    </div>
+    <br>
+    <p><span class="tokenSold">{{totalSold}}</span>/<span class="totalSupply">{{totalSupply}}</span> token sold</p>
+
+</div>

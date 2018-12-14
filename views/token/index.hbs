@@ -1,0 +1,55 @@
+<div class="maincontent container">
+  <br>
+    <br>
+      <br>
+  <hr>
+  <br>
+  <div id="loader">
+    <p class="text-center">Loading...</p>
+  </div>
+    <h3>Introducing Dapp Token</h3>
+    <br>
+    <div class="row">
+      <div class="col-lg-6 col-md-4">
+        <p> <b>Your Address : </b> <span class="useraddress">{{useraddress}}</span></p>
+      </div>
+      <div class="col-lg-6 col-md-4">
+          <p> <b>ETH balance is : </b><span class="userbalance">{{userBalance}}</span</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-4">
+        <p><b>Token Price : </b><span class="token-price">{{price}}</span></p>
+      </div>
+      <div class="col-lg-6 col-md-4">
+        <b>ATT TOKEN : </b><span class="token-balance">{{ balance }}</span></p>
+      </div>
+    </div>
+    <br>
+    <form role="form" action="/token/tokenbuy" method="post">
+      <div class="form-group">
+          <div class="input-group">
+            <input id="numberOfToken" placeholder="Enter the token Count" class="form-control" type="number" name="number"  min="1" pattern="[0-9]">
+            </span>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="input-group">
+            <input id="amount" class="form-control" placeholder="Amount"  type="amount" name="amount" >
+            <input id="privatekey" class="form-control" placeholder="Private Key * will not be stored"   name="privatekey" >
+            <span class="input-group-btn"><button type="submit" class="btn btn-primary">Buy</button>
+            </span>
+          </div>
+      </div>
+    </form>
+    <br>
+    <div class="progress">
+    <div id="progress" class="progress-bar progress-bar-striped active" aria-voluemin="0" aria-volumemax="100">
+    </div></div>
+    <br>
+    <div>
+    </div>
+    <br>
+    <p>Total Sold: <span class="tokenSold">{{totalSold}}</span>/<span class="totalSupply">{{totalSupply}}</span> token remaining</p>
+
+</div>

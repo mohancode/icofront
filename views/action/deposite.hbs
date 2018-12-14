@@ -1,0 +1,83 @@
+<div class="maincontent container">
+  <br>
+    <br>
+      <br>
+  <hr>
+  <br>
+  <div id="loader">
+    <p class="text-center">Loading...</p>
+  </div>
+    <h3>Deposite</h3>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-lg-12 col-md-4">
+        <p> <b>CoinAddress : </b> <span class="useraddress">{{coinAddress}}</span></p>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-4">
+        <p> <b>My Address : </b> <span class="useraddress">{{userAddress}}</span></p>
+      </div>
+      <div class="col-lg-6 col-md-4">
+          <p> <b>My Balance : </b>{{userbalance}}</p>
+      </div>
+    </div>
+    <br>
+    <form role="form" action="/action/deposite" method="post">
+
+      <div class="form-group">
+          <div class="input-group">
+            <input id="#" class="form-control" type="hidden" name="coinAddress" value="{{coinAddress}}">
+            <input id="#" class="form-control" type="hidden" name="userAddress" value="{{userAddress}}">
+            <input id="amount" class="form-control" placeholder="enter the deposited eth"  type="amount" name="amount" >
+            <input id="privatekey" class="form-control" placeholder="Private Key * will not be stored"   name="privatekey" >
+            <span class="input-group-btn"><button type="submit" class="btn btn-primary">Deposite</button>
+            </span>
+          </div>
+      </div>
+    </form>
+    <br>
+
+    <br>
+    <div>
+    </div>
+    <br>
+    <div class="row">
+      {{#if txHash }}
+      <div class="col-12 transactiondiv">
+          <h3><span>Transactionid : <a target="_blank" href="https://rinkeby.etherscan.io/tx/{{txHash}}">{{txHash}}</a></span></h3>
+      </div>
+      {{/if}}
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <table class="table">
+          <thead>
+            <tr>
+
+              <th>Amount</th>
+              <th>To</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {{# each depoDetails }}
+
+            <tr>
+
+              <td>{{amount}}</td>
+              <td>{{to}}</td>
+              <td>{{date}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+    </div>
+
+</div>
